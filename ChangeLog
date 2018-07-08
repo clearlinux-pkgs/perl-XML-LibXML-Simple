@@ -1,0 +1,125 @@
+libxml-libxml-simple-perl (0.99-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Damyan Ivanov ]
+  * declare conformance with Policy 4.1.2 (no changes needed)
+
+  [ gregor herrmann ]
+  * New upstream release.
+  * Drop spelling.patch, applied upstream.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 26 Dec 2017 20:02:26 +0100
+
+libxml-libxml-simple-perl (0.98-1) unstable; urgency=medium
+
+  * Team upload.
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+  * New upstream release.
+  * Drop spelling.patch, applied upstream.
+  * Update years of upstream copyright.
+  * Declare compliance with Debian Policy 4.1.1.
+  * Update (build) dependencies.
+  * Add a new spelling.patch, as lintian has gained mor misspellings.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 13 Nov 2017 20:59:17 +0100
+
+libxml-libxml-simple-perl (0.97-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ gregor herrmann ]
+  * New upstream release.
+  * Update years of upstream copyright.
+  * Add a patch to fix a spelling mistake.
+  * Bump debhelper compatibility level to 9.
+  * Declare compliance with Debian Policy 3.9.8.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 06 May 2016 18:29:08 +0200
+
+libxml-libxml-simple-perl (0.95-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ gregor herrmann ]
+  * New upstream release.
+  * Mark package as autopkgtest-able.
+  * Declare compliance with Debian Policy 3.9.6.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 25 Jul 2015 16:29:13 +0200
+
+libxml-libxml-simple-perl (0.94-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Strip trailing slash from metacpan URLs.
+  * Update years of upstream copyright.
+  * debian/control: replace libfile-slurp-perl with libfile-slurp-tiny-
+    perl.
+  * Declare compliance with Debian Policy 3.9.5.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 08 Jun 2014 11:38:46 +0200
+
+libxml-libxml-simple-perl (0.93-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Ansgar Burchardt ]
+  * debian/control: Convert Vcs-* fields to Git.
+
+  [ gregor herrmann ]
+  * debian/control: update {versioned,alternative} (build) dependencies.
+
+  [ Salvatore Bonaccorso ]
+  * Change search.cpan.org based URIs to metacpan.org based URIs
+
+  [ gregor herrmann ]
+  * New upstream release.
+    Fixes "FTBFS with perl 5.18: POD"
+    (Closes: #711405)
+  * debian/copyright: switch formatting to Copyright-Format 1.0.
+  * Update years of upstream copyright.
+  * Remove build dependency on libtest-pod-perl.
+  * Set Standards-Version to 3.9.4 (no further changes).
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 08 Jun 2013 01:21:58 +0200
+
+libxml-libxml-simple-perl (0.91-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Tue, 12 Jul 2011 13:52:10 +0200
+
+libxml-libxml-simple-perl (0.90-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 18 Jun 2011 23:12:09 +0200
+
+libxml-libxml-simple-perl (0.15-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release.
+  * debian/control, debian/rules: Remove quilt references. Not needed with
+    source format 3.0 (quilt).
+  * debian/copyright: Update for new upstream release; refer to GPL-1; refer
+    to "Debian systems" instead of "Debian GNU/Linux systems".
+  * debian/control: Mention module name in description.
+  * Bump Standards-Version to 3.9.2 (no changes).
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Thu, 02 Jun 2011 13:04:09 +0200
+
+libxml-libxml-simple-perl (0.14-1) unstable; urgency=low
+
+  [ Danai SAE-HAN ]
+  * Initial release (Closes: #601290).
+
+ -- Danai SAE-HAN (韓達耐) <danai@debian.org>  Wed, 03 Nov 2010 23:28:40 +0100
