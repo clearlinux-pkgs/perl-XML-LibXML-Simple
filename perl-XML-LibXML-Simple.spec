@@ -4,7 +4,7 @@
 #
 Name     : perl-XML-LibXML-Simple
 Version  : 0.99
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/XML-LibXML-Simple-0.99.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/XML-LibXML-Simple-0.99.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libx/libxml-libxml-simple-perl/libxml-libxml-simple-perl_0.99-1.debian.tar.xz
