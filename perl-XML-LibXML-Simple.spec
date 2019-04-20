@@ -4,11 +4,11 @@
 #
 Name     : perl-XML-LibXML-Simple
 Version  : 0.99
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/XML-LibXML-Simple-0.99.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/XML-LibXML-Simple-0.99.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libx/libxml-libxml-simple-perl/libxml-libxml-simple-perl_0.99-1.debian.tar.xz
-Summary  : 'XML::LibXML based XML::Simple clone'
+Summary  : An analogue of XML::Simple using libxml
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-XML-LibXML-Simple-license = %{version}-%{release}
@@ -24,6 +24,7 @@ There are various ways to install this module:
 Summary: dev components for the perl-XML-LibXML-Simple package.
 Group: Development
 Provides: perl-XML-LibXML-Simple-devel = %{version}-%{release}
+Requires: perl-XML-LibXML-Simple = %{version}-%{release}
 
 %description dev
 dev components for the perl-XML-LibXML-Simple package.
@@ -42,7 +43,7 @@ license components for the perl-XML-LibXML-Simple package.
 cd ..
 %setup -q -T -D -n XML-LibXML-Simple-0.99 -b 1
 mkdir -p deblicense/
-mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/XML-LibXML-Simple-0.99/deblicense/
+cp -r %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/XML-LibXML-Simple-0.99/deblicense/
 
 %build
 export http_proxy=http://127.0.0.1:9/
