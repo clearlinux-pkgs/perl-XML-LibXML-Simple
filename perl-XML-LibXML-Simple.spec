@@ -4,14 +4,15 @@
 #
 Name     : perl-XML-LibXML-Simple
 Version  : 0.99
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/XML-LibXML-Simple-0.99.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/XML-LibXML-Simple-0.99.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libx/libxml-libxml-simple-perl/libxml-libxml-simple-perl_0.99-1.debian.tar.xz
-Summary  : An analogue of XML::Simple using libxml
+Summary  : 'XML::LibXML based XML::Simple clone'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-XML-LibXML-Simple-license = %{version}-%{release}
+Requires: perl-XML-LibXML-Simple-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(XML::LibXML)
 BuildRequires : perl(XML::SAX::Exception)
@@ -38,18 +39,28 @@ Group: Default
 license components for the perl-XML-LibXML-Simple package.
 
 
+%package perl
+Summary: perl components for the perl-XML-LibXML-Simple package.
+Group: Default
+Requires: perl-XML-LibXML-Simple = %{version}-%{release}
+
+%description perl
+perl components for the perl-XML-LibXML-Simple package.
+
+
 %prep
 %setup -q -n XML-LibXML-Simple-0.99
-cd ..
-%setup -q -T -D -n XML-LibXML-Simple-0.99 -b 1
+cd %{_builddir}
+tar xf %{_sourcedir}/libxml-libxml-simple-perl_0.99-1.debian.tar.xz
+cd %{_builddir}/XML-LibXML-Simple-0.99
 mkdir -p deblicense/
-cp -r %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/XML-LibXML-Simple-0.99/deblicense/
+cp -r %{_builddir}/debian/* %{_builddir}/XML-LibXML-Simple-0.99/deblicense/
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -59,7 +70,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -68,7 +79,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-XML-LibXML-Simple
-cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-XML-LibXML-Simple/deblicense_copyright
+cp %{_builddir}/XML-LibXML-Simple-0.99/deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-XML-LibXML-Simple/f799fb75028ed1c3f97c2836c4d0d9defb473bd7
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -81,8 +92,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/XML/LibXML/Simple.pm
-/usr/lib/perl5/vendor_perl/5.28.2/XML/LibXML/Simple.pod
 
 %files dev
 %defattr(-,root,root,-)
@@ -90,4 +99,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-XML-LibXML-Simple/deblicense_copyright
+/usr/share/package-licenses/perl-XML-LibXML-Simple/f799fb75028ed1c3f97c2836c4d0d9defb473bd7
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/XML/LibXML/Simple.pm
+/usr/lib/perl5/vendor_perl/5.30.1/XML/LibXML/Simple.pod
