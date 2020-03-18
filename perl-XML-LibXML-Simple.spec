@@ -4,11 +4,11 @@
 #
 Name     : perl-XML-LibXML-Simple
 Version  : 1.01
-Release  : 15
+Release  : 16
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/XML-LibXML-Simple-1.01.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MARKOV/XML-LibXML-Simple-1.01.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libx/libxml-libxml-simple-perl/libxml-libxml-simple-perl_0.99-1.debian.tar.xz
-Summary  : An analogue of XML::Simple using libxml
+Summary  : 'XML::LibXML alternative to XML::Simple::XMLin()'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-XML-LibXML-Simple-license = %{version}-%{release}
@@ -18,17 +18,13 @@ BuildRequires : perl(XML::LibXML)
 BuildRequires : perl(XML::SAX::Exception)
 
 %description
-# distribution XML-LibXML-Simple
-* My extended documentation: <http://perl.overmeer.net/CPAN/>
-* Development via GitHub: <https://github.com/markov2/perl5-XML-LibXML-Simple>
-* Download from CPAN: <ftp://ftp.cpan.org/pub/CPAN/authors/id/M/MA/MARKOV/>
-* Indexed from CPAN: <https://metacpan.org/release/XML-LibXML-Simple>
+=   Generated on Wed Jan 15 11:56:02 2020 by OODoc 2.02
+There are various ways to install this module:
 
 %package dev
 Summary: dev components for the perl-XML-LibXML-Simple package.
 Group: Development
 Provides: perl-XML-LibXML-Simple-devel = %{version}-%{release}
-Requires: perl-XML-LibXML-Simple = %{version}-%{release}
 Requires: perl-XML-LibXML-Simple = %{version}-%{release}
 
 %description dev
@@ -83,7 +79,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-XML-LibXML-Simple
-cp %{_builddir}/XML-LibXML-Simple-1.01/deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-XML-LibXML-Simple/f799fb75028ed1c3f97c2836c4d0d9defb473bd7
+cp %{_builddir}/debian/copyright %{buildroot}/usr/share/package-licenses/perl-XML-LibXML-Simple/f799fb75028ed1c3f97c2836c4d0d9defb473bd7
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -107,5 +103,5 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/XML/LibXML/Simple.pm
-/usr/lib/perl5/vendor_perl/5.30.1/XML/LibXML/Simple.pod
+/usr/lib/perl5/vendor_perl/5.30.2/XML/LibXML/Simple.pm
+/usr/lib/perl5/vendor_perl/5.30.2/XML/LibXML/Simple.pod

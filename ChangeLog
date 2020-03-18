@@ -1,125 +1,130 @@
-libxml-libxml-simple-perl (0.99-1) unstable; urgency=medium
 
-  * Team upload.
+=== version history for XML::LibXML::Simple
 
-  [ Damyan Ivanov ]
-  * declare conformance with Policy 4.1.2 (no changes needed)
+version 1.01: Wed 15 Jan 2020 10:47:10 PM CET
 
-  [ gregor herrmann ]
-  * New upstream release.
-  * Drop spelling.patch, applied upstream.
+	Changes:
+	- Slaven needs 5.8 to be supported for his processed.  Reinstated.
+	  rt.cpan.org#131486 [Slaven Rezic]
 
- -- gregor herrmann <gregoa@debian.org>  Tue, 26 Dec 2017 20:02:26 +0100
+	Fixes:
+	- README.md contained info of other project.
 
-libxml-libxml-simple-perl (0.98-1) unstable; urgency=medium
+version 1.00: Wed 15 Jan 11:57:43 CET 2020
 
-  * Team upload.
-  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
-  * New upstream release.
-  * Drop spelling.patch, applied upstream.
-  * Update years of upstream copyright.
-  * Declare compliance with Debian Policy 4.1.1.
-  * Update (build) dependencies.
-  * Add a new spelling.patch, as lintian has gained mor misspellings.
+	Changes:
+	- require perl 5.10
 
- -- gregor herrmann <gregoa@debian.org>  Mon, 13 Nov 2017 20:59:17 +0100
+	Improvements:
+	- converted to GitHUB
 
-libxml-libxml-simple-perl (0.97-1) unstable; urgency=medium
+version 0.99: Mon 11 Dec 12:53:14 CET 2017
 
-  * Team upload.
+	Changes:
+	- support SuppressEmpty.
 
-  [ Salvatore Bonaccorso ]
-  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+	Improvements:
+	- typo
+	  rt.cpan.org#123618 [Gregor Herrmann, Debian]
 
-  [ gregor herrmann ]
-  * New upstream release.
-  * Update years of upstream copyright.
-  * Add a patch to fix a spelling mistake.
-  * Bump debhelper compatibility level to 9.
-  * Declare compliance with Debian Policy 3.9.8.
+version 0.98: Wed  8 Nov 10:38:35 CET 2017
 
- -- gregor herrmann <gregoa@debian.org>  Fri, 06 May 2016 18:29:08 +0200
+	Improvements:
+	- warn about the dwimmery of the code
+	  rt.cpan.org#114021 [David Schmidt, Slaven Rezic]
+	- typo
+	  rt.cpan.org#114211 [Gregor Herrmann, Debian]
+	- remove dependency on File::Slurp::Tiny, never used it
+	  rt.cpan.org#123537 [Dan Book]
 
-libxml-libxml-simple-perl (0.95-1) unstable; urgency=medium
+version 0.97: Tue 12 Apr 15:12:21 CEST 2016
 
-  * Team upload.
+	Fixes:
+	- HookNodes parameter was not allowed. [Kit Peters]
 
-  [ Salvatore Bonaccorso ]
-  * Update Vcs-Browser URL to cgit web frontend
+version 0.96: Fri 11 Mar 15:09:43 CET 2016
 
-  [ gregor herrmann ]
-  * New upstream release.
-  * Mark package as autopkgtest-able.
-  * Declare compliance with Debian Policy 3.9.6.
+	Improvements:
+	- deprecate XML input from 'undef'
+	- rewrite UNIVERSAL::isa into blessed ->isa
+	- implement hooks on nodes
 
- -- gregor herrmann <gregoa@debian.org>  Sat, 25 Jul 2015 16:29:13 +0200
+version 0.95: Mon Dec 22 08:19:53 CET 2014
 
-libxml-libxml-simple-perl (0.94-1) unstable; urgency=medium
+	Fixes:
+	- content-key collapse did not work with any key value of 0.
 
-  * Team upload.
-  * New upstream release.
-  * Strip trailing slash from metacpan URLs.
-  * Update years of upstream copyright.
-  * debian/control: replace libfile-slurp-perl with libfile-slurp-tiny-
-    perl.
-  * Declare compliance with Debian Policy 3.9.5.
+	Improvements:
+	- doc: be clear that an XML::LibXML node can be used as source
+	  for XMLin as well [Salve J. Nilsen]
+	- doc: cleaner SYNOPSIS, minor reorganisation.
 
- -- gregor herrmann <gregoa@debian.org>  Sun, 08 Jun 2014 11:38:46 +0200
+version 0.94: Sat Jun  7 22:39:23 CEST 2014
 
-libxml-libxml-simple-perl (0.93-1) unstable; urgency=low
+	Improvements:
+	- change documentation style.
+	- replace File::Slurp by File::Slurp::Tiny [Caleb Cushing]
 
-  * Team upload.
+version 0.93: Sat Mar  2 11:58:52 CET 2013
 
-  [ Ansgar Burchardt ]
-  * debian/control: Convert Vcs-* fields to Git.
+	Improvements:
+	- move pod-test to xt/
+	- fix warning produced by Pod::Checker
 
-  [ gregor herrmann ]
-  * debian/control: update {versioned,alternative} (build) dependencies.
+version 0.92: Fri Dec 21 12:22:16 CET 2012
 
-  [ Salvatore Bonaccorso ]
-  * Change search.cpan.org based URIs to metacpan.org based URIs
+	Fixes:
+	- include license in the manuals.
 
-  [ gregor herrmann ]
-  * New upstream release.
-    Fixes "FTBFS with perl 5.18: POD"
-    (Closes: #711405)
-  * debian/copyright: switch formatting to Copyright-Format 1.0.
-  * Update years of upstream copyright.
-  * Remove build dependency on libtest-pod-perl.
-  * Set Standards-Version to 3.9.4 (no further changes).
+version 0.91: Mon Jul 11 22:40:02 CEST 2011
 
- -- gregor herrmann <gregoa@debian.org>  Sat, 08 Jun 2013 01:21:58 +0200
+	Fixes:
+	- forcearray option with one element
+	  rt.cpan.org#69336 [Matt W Johnson]
 
-libxml-libxml-simple-perl (0.91-1) unstable; urgency=low
+version 0.90: Wed Jun 15 10:20:48 CEST 2011
 
-  * Team upload.
-  * New upstream release
+	Fixes:
+	- initialize XML::LibXML::Parser into safe mode.
+	  rt.cpan.org#68803 [Yann Kerherve]
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Tue, 12 Jul 2011 13:52:10 +0200
+	Improvements:
+	- new Parser and ParserOpts parameters
 
-libxml-libxml-simple-perl (0.90-1) unstable; urgency=low
+version 0.15: Thu Apr 28 10:22:34 CEST 2011
 
-  * Team upload.
-  * New upstream release
+	Fixes:
+	- parser object recreated each time, because it cannot be
+	  reused (any more?). [Didier Brun]
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 18 Jun 2011 23:12:09 +0200
+version 0.14: Fri Jul 16 11:17:49 CEST 2010
 
-libxml-libxml-simple-perl (0.15-1) unstable; urgency=low
+	Fixes:
+	- do not use /bin/pwd in t/99pod.t
+	- forgot to define xml_in.
+	  rt.cpan.org#59172 [Justin Case]
 
-  * Team upload.
-  * New upstream release.
-  * debian/control, debian/rules: Remove quilt references. Not needed with
-    source format 3.0 (quilt).
-  * debian/copyright: Update for new upstream release; refer to GPL-1; refer
-    to "Debian systems" instead of "Debian GNU/Linux systems".
-  * debian/control: Mention module name in description.
-  * Bump Standards-Version to 3.9.2 (no changes).
+version 0.13: Wed Nov 19 11:03:52 CET 2008
 
- -- Ansgar Burchardt <ansgar@debian.org>  Thu, 02 Jun 2011 13:04:09 +0200
+	Fixes:
+	- do not try to expand namespace in "pseudo-" attributes, like
+	  namespace declarations.
 
-libxml-libxml-simple-perl (0.14-1) unstable; urgency=low
+	Improvements:
+	- include the ChangeLog in the package.  Discovered by [CPANTS]
+	- add option NsStrip
 
-  [ Danai SAE-HAN ]
-  * Initial release (Closes: #601290).
+version 0.12: Wed Mar 26 11:43:09 CET 2008
 
- -- Danai SAE-HAN (韓達耐) <danai@debian.org>  Wed, 03 Nov 2010 23:28:40 +0100
+	Fixes:
+	- fix tests on Windows.
+
+version 0.11: Fri Feb  8 14:41:35 CET 2008
+
+	Improvements:
+	- moved XML input parsing to separate subroutine
+	- added ChangeLog
+	- added some more docs
+
+version 0.10: Mon Feb  4 17:46:07 CET 2008
+	- initial release
